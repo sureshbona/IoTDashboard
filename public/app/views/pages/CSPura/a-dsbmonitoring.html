@@ -1,0 +1,58 @@
+<div class="parallax" style="min-height: 1000px;">
+    <br><br>
+    <h3 align="center">ADSB Data</h3>
+    <div ng-show="adsbmoni.processing" align="center">
+        <span class="mdl-spinner mdl-js-spinner is-active"></span>
+    </div>
+
+    <div class="center">
+
+    <div ng-show="!data==0">
+        <table class="mdl-data-table mdl-js-data-table" border="1px" align="center">
+            <thead>
+            <tr>
+                <th>Time
+                    </th>
+                <th style="text-align: center">Hex</th>
+                <th style="text-align: center">Mode</th>
+                <th style="text-align: center">Sqwk</th>
+                <th style="text-align: center">Flight</th>
+                <th style="text-align: center">Alt</th>
+                <th style="text-align: center">Spd</th>
+                <th style="text-align: center">Hdg</th>
+                <th style="text-align: center">Lat</th>
+                <th style="text-align: center">Long</th>
+                <th style="text-align: center">Sig</th>
+                <th style="text-align: center">Msgs</th>
+                <th style="text-align: center">Ti</th>
+            </tr>
+
+            </thead>
+            <tbody>
+            <tr dir-paginate="n in data|orderBy:sortKey:reverse|itemsPerPage:15">
+                <td class="mdl-data-table__cell--non-numeric" align="center">{{n.time}}</td>
+                <td class="mdl-data-table__cell--non-numeric" align="center">{{n.freq}}</td>
+                <td class="mdl-data-table__cell--non-numeric" align="center">{{n.volt}}</td>
+                <td class="mdl-data-table__cell--non-numeric" align="center">{{n.time}}</td>
+                <td class="mdl-data-table__cell--non-numeric" align="center">{{n.freq}}</td>
+                <td class="mdl-data-table__cell--non-numeric" align="center">{{n.volt}}</td>
+                <td class="mdl-data-table__cell--non-numeric" align="center">{{n.time}}</td>
+                <td class="mdl-data-table__cell--non-numeric" align="center">{{n.freq}}</td>
+                <td class="mdl-data-table__cell--non-numeric" align="center">{{n.volt}}</td>
+                <td class="mdl-data-table__cell--non-numeric" align="center">{{n.time}}</td>
+                <td class="mdl-data-table__cell--non-numeric" align="center">{{n.freq}}</td>
+                <td class="mdl-data-table__cell--non-numeric" align="center">{{n.volt}}</td>
+                <td class="mdl-data-table__cell--non-numeric" align="center">{{n.volt}}</td>
+            </tr>
+            </tbody>
+        </table>
+        <dir-pagination-controls style="display: inline-block; "
+                                 max-size="5"
+                                 direction-links="true"
+                                 boundary-links="true" >
+        </dir-pagination-controls>
+        <!--</div>-->
+    </div>
+
+    </div>
+</div>

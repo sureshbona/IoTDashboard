@@ -1,0 +1,51 @@
+    <br><br><br><br>
+    <h3 align="center">CSPura - Power Monitoring Data</h3>
+    <div ng-show="powermoni.processing" align="center">
+        <span class="mdl-spinner mdl-js-spinner is-active"></span>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col one">
+            <div ng-show="!data==0">
+            <table class="mdl-data-table mdl-js-data-table" border="1px" style="background: transparent">
+                <thead>
+                <tr>
+                    <th style="text-align: center" ng-click="sort('time')">Time
+                        <span class="material-icons" ng-if="!reverse">expand_less</span>
+                        <span class="material-icons" ng-if="reverse">expand_more</span></th>
+                    <th style="text-align: center">Frequency (Hz)</th>
+                    <th style="text-align: center">Voltage (Volts)</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr dir-paginate="n in data|orderBy:sortKey:reverse|itemsPerPage:15">
+                    <td class="mdl-data-table__cell--non-numeric" align="center">{{n.time * 1000| date : "medium"}}</td>
+                    <td class="mdl-data-table__cell--non-numeric" align="center">{{n.freq}}</td>
+                    <td class="mdl-data-table__cell--non-numeric" align="center">{{n.volt}}</td>
+                </tr>
+                </tbody>
+            </table>
+            <dir-pagination-controls style="display: inline-block;"
+                                     max-size="6"
+                                     direction-links="true"
+                                     boundary-links="true" >
+            </dir-pagination-controls>
+            <!--</div>-->
+        </div>
+        </div>
+
+
+
+
+        <div class="col two" >
+            <div id="spectrum" ></div>
+            <div ng-show="!data==0" id="curtain" style="background: transparent">
+                <img src="../../../../assets/img/gears.gif">
+            </div>
+        </div>
+    </div>
+
+

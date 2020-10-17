@@ -1,0 +1,139 @@
+<div class="ckpura">
+    <main class="mdl-layout__content">
+        <h1 class="header-text">CKPura IoT Station</h1>
+    </main>
+</div>
+<div class="row" ng-controller="ckpuraLatestCtrl">
+    <div class="box">
+        <h4>ChannaKeshavapura IoT Field Station</h4>
+        <div class="column demo-card-wide mdl-card" style="background: transparent">
+            <div class="mdl-card__supporting-text" style="color: rgb(63, 64, 143)">
+                <div id="primary">
+                    <h5><b>Powermonitor Data</b></h5>
+                    <b>Last Update :</b> {{power_time}} &nbsp; <img ng-hide="power_time" src="../../../assets/img/ellipsis%20.gif"><br><br>
+                    <b>Frequency</b>: {{power_freq}} &nbsp; <img ng-hide="power_freq" src="../../../assets/img/ellipsis%20.gif"></span><br><br>
+                    <b>Voltage</b>: {{power_volt}} &nbsp; <img ng-hide="power_volt" src="../../../assets/img/ellipsis%20.gif"></span><br><br>
+
+                </div>
+            </div>
+            <div class="mdl-card__actions">
+                <a class="mdl-button mdl-js-button mdl-button--raised"  href="/ckpura/power" style="background: rgb(93, 83, 120); color: white">
+                    More Details
+                </a>
+            </div>
+        </div>
+        <div class="column demo-card-wide mdl-card" style="background: transparent">
+            <div class="mdl-card__supporting-text" style="color: rgb(63, 64, 143)">
+                <div id="primary">
+                    <h5><b>ADSB Data</b></h5>
+                    <b>Last Update :</b> {{adsb_time}} &nbsp; <img ng-hide="adsb_time" src="../../../assets/img/ellipsis%20.gif"><br><br>
+                    <b>Hex Code</b>: {{adsb_hex}} &nbsp; <img ng-hide="adsb_hex" src="../../../assets/img/ellipsis%20.gif"></span><br><br>
+                    <b>Flight No.</b>: {{adsb_flght}} &nbsp; <img ng-hide="adsb_hex" src="../../../assets/img/ellipsis%20.gif"></span><br><br>
+                    <b>Location</b>: {{lat_lng}} &nbsp; <img ng-hide="lat_lng" src="../../../assets/img/ellipsis%20.gif"></span><br><br>
+                </div>
+            </div>
+            <div class="mdl-card__actions">
+                <a class="mdl-button mdl-js-button mdl-button--raised"  href="/ckpura/adsb" style="background: rgb(93, 83, 120); color: white">
+                    More Details
+                </a>
+            </div>
+        </div>
+        <div class="column demo-card-wide mdl-card" style="background: transparent">
+            <div class="mdl-card__supporting-text" style="color: rgb(63, 64, 143)">
+                <div id="primary">
+                    <h5><b>Weathermonitor Data</b></h5>
+                    <b>Last Update :</b> {{weather_time}} &nbsp; <img ng-hide="weather_time" src="../../../assets/img/ellipsis%20.gif"><br><br>
+                    <b>Temperature</b>: {{weather_temp}} &nbsp; <img ng-hide="weather_temp" src="../../../assets/img/ellipsis%20.gif"><br><br>
+                    <b>Humidity</b>: {{weather_hum}} &nbsp; <img ng-hide="weather_hum" src="../../../assets/img/ellipsis%20.gif"><br><br>
+                </div>
+            </div>
+            <div class="mdl-card__actions">
+                <a class="mdl-button mdl-js-button mdl-button--raised"  href="/ckpura/weather" style="background: rgb(93, 83, 120); color: white">
+                    More Details
+                </a>
+            </div>
+        </div>
+
+        <div class="column demo-card-wide mdl-card" style="background: transparent">
+            <div class="mdl-card__supporting-text" style="color: rgb(63, 64, 143)">
+                <div id="primary">
+                    <h5><b>WaterFlow</b></h5>
+                    <b>Last Update :</b> {{water_time}} &nbsp; <img ng-hide="power_time" src="../../../assets/img/ellipsis%20.gif"><br><br>
+                    <b>Flow Rate</b>: {{water_flowrate}}<img ng-hide="power_time" src="../../../assets/img/ellipsis%20.gif"><br><br>
+                    <b>Total Flow</b>: {{water_totalflow}} <img ng-hide="power_time" src="../../../assets/img/ellipsis%20.gif"><br><br>
+                </div>
+            </div>
+            <div class="mdl-card__actions">
+                <a class="mdl-button mdl-js-button mdl-button--raised"  href="/ckpura/waterflow" style="background: rgb(93, 83, 120); color: white">
+                    More Details
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!--<div class="boxed">
+        <h2>Channakeshavapura IoT Field Station</h2>
+    </div>
+    <div class="column demo-card-wide mdl-card mdl-shadow&#45;&#45;2dp">
+        <div class="mdl-card__supporting-text">
+            <div id="primary">
+                <font>
+                    <h5><font color="#a52a2a">Powermonitor Data</font></h5>
+                    <b>Last Update at</b> <b id="power_time"></b><br><br>
+                    <b>Frequency</b>: <font id="power_freq"></font>Hz<br><br>
+                    <b>Voltage</b>: <font id="power_volt"></font>V<br><br>
+                </font>
+            </div>
+        </div>
+        <div class="mdl-card__actions mdl-card&#45;&#45;border">
+            <a class="mdl-button mdl-button&#45;&#45;colored mdl-js-button mdl-js-ripple-effect"  href="/power">
+                More Details
+            </a>
+        </div>
+    </div>
+    <div class="column demo-card-wide mdl-card mdl-shadow&#45;&#45;2dp">
+        <div class="mdl-card__supporting-text">
+            <div id="content">
+                <font>
+                    <h5><font color="#a52a2a">Soil Moisture</font></h5>
+                    <b>Last Update at </b> <b id="soil_time"> 27/10/2016, 10:43:23</b><br><br>
+                    <b>VWC</b>: <font id="soil_vwc"> 0.5</font><br><br><br><br>
+                </font>
+            </div>
+        </div>
+        <div class="mdl-card__actions mdl-card&#45;&#45;border">
+            <a class="mdl-button mdl-button&#45;&#45;colored mdl-js-button mdl-js-ripple-effect"  href="/power">
+                More Details
+            </a>
+        </div>
+    </div>
+    <div class="column demo-card-wide mdl-card mdl-shadow&#45;&#45;2dp">
+        <div class="mdl-card__supporting-text">
+            <div id="primary">
+                <font>
+                    <h5><font color="#a52a2a">Weathermonitor Data</font></h5>
+                    <b>Last Update at</b> <b id="weather_time"></b><br><br>
+                    <b>Temperature</b>: <font id="weather_temp"></font>&#8451<br><br>
+                    <b>Humidity</b>: <font id="weather_freq"></font>%<br><br>
+                </font>
+            </div>
+        </div>
+        <div class="mdl-card__actions mdl-card&#45;&#45;border">
+            <a class="mdl-button mdl-button&#45;&#45;colored mdl-js-button mdl-js-ripple-effect"  href="/weather">
+                More Details
+            </a>
+        </div>
+    </div>-->
+</div>
+
+    <div class="center" ng-controller="mapCKPuraController">
+        <div id="map"></div>
+
+        <br><br>
+        <!--<p>Name: Suresh<br>
+            Phone: 9663966425
+        </p>-->
+    </div>
+
+    <!--<img src="../../../assets/img/page_is_under_construction.jpg">-->

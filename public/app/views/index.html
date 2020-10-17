@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Village IoT</title>
+</head>
+
+<!-- FOR ANGULAR ROUTING -->
+<base href="/">
+
+<script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+<!--<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">-->
+<!--<link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.teal-red.min.css" />-->
+<link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.blue-amber.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/card.css">
+<link rel="stylesheet" href="../assets/css/sidebyside.css">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+
+<!--<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>-->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-route.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-animate.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqy0gymMog6_MASiVsqqK8M0cdmJQuKsI"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script>
+<script src="http://code.angularjs.org/1.2.16/angular-resource.js"></script>
+<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+<script src= "assets/lib/dirPagination.js"></script>
+<!-- amCharts Links -->
+
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+
+<!-- CKPura controllers -->
+<script src= "app/controllers/CKPura/ckPuraCtrl.js"></script>
+<script src= "app/controllers/CKPura/ckpuraPowerCtrl.js"></script>
+<script src= "app/controllers/CKPura/ckpuraSoilCtrl.js"></script>
+<script src= "app/controllers/CKPura/ckpuraWeatherCtrl.js"></script>
+<script src= "app/controllers/CKPura/ckpuraAdsbCtrl.js"></script>
+<script src= "app/controllers/CKPura/mapCKPuraCtrl.js"></script>
+<script src= "app/controllers/CKPura/ckpuraLatestCtrl.js"></script>
+
+<!-- CKPura controllers -->
+<script src= "app/controllers/CSPura/csPuraCtrl.js"></script>
+<script src= "app/controllers/CSPura/cspuraPowerCtrl.js"></script>
+<script src= "app/controllers/CSPura/cspuraSoilCtrl.js"></script>
+<script src= "app/controllers/CSPura/cspuraWeatherCtrl.js"></script>
+<script src= "app/controllers/CSPura/cspuraAdsbCtrl.js"></script>
+<script src= "app/controllers/CSPura/mapCSPuraCtrl.js"></script>
+<script src= "app/controllers/CSPura/cspuraLatestCtrl.js"></script>
+
+<!-- CKPura services -->
+<script src= "app/services/CKPura/ckpuraPowerService.js"></script>
+<script src= "app/services/CKPura/ckpuraSoilService.js"></script>
+<script src= "app/services/CKPura/ckpuraWeatherService.js"></script>
+<script src= "app/services/CKPura/ckpuraAdsbService.js"></script>
+
+<!-- CSPura services -->
+<script src= "app/services/CSPura/cspuraPowerService.js"></script>
+<script src= "app/services/CSPura/cspuraSoilService.js"></script>
+<script src= "app/services/CSPura/cspuraWeatherService.js"></script>
+<script src= "app/services/CSPura/cspuraAdsbService.js"></script>
+
+
+<!--<script src= "app/controllers/angular.js"></script>
+<script src= "app/controllers/application.js"></script>-->
+
+<script src= "app/routes/ckpuraRoutes.js"></script>
+<script src= "app/routes/cspuraRoutes.js"></script>
+<script src= "app/app.js"></script>
+
+<!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+<script type="text/javascript" src="/assets/lib/scrollingHeader.js"></script>
+
+<!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+
+
+
+
+<body ng-app="myApp">
+
+<div class="demo-layout-transparent mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header mdl-layout__header--transparent default" >
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <a class="mdl-layout-title" style="color: white" href="/"><i class="material-icons">track_changes</i>Village IoT</a>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation with router directives-->
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="/ckpura">CKPura</a>
+                <a class="mdl-navigation__link" href="/cspura">CSPura</a>
+                <!--<a class="mdl-navigation__link" href="/login">Login</a>-->
+            </nav>
+        </div>
+    </header>
+</div>
+
+    <!--<header class="mdl-layout__header">
+        <div class="container">
+            <div class="mdl-layout__header-row">
+                <a class="mdl-navigation__link" href="/"><i class="material-icons">track_changes</i>Village IoT</a>
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation">
+                    <a href="/login" style="color: white">Login</a>
+                </nav>
+            </div>
+        </div>
+    </header>-->
+
+            <!-- Router Outlet -->
+            <div class="container">
+                <div ng-view></div>
+            </div>
+
+</body>
+</html>

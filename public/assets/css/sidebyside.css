@@ -1,0 +1,75 @@
+.col{
+    float:left;
+    width: 46%;
+}
+.one{
+    padding-left: 7%;
+}
+
+.two {
+    padding-top: 5%;
+}
+
+#curtain img {
+    display: block;
+    position: absolute;
+    left: 40%;
+    top: 30%;
+    /* width: 100%; */
+    align: center;
+}
+
+#curtain {
+    background: rgba(0,0,0,.26);
+    color: #fff;
+    font-size: 25px;
+}
+
+#chartdiv, #curtain {
+    width: 40%;
+    height: 40%;
+    top: 25%;
+    position: absolute;
+}
+
+#spectrum {
+    width: auto;
+    height: 500px;
+}
+
+@media screen and (max-width: 1000px) {
+    .col{
+        float: none;
+        margin:0;
+        width: 100%;
+        padding: 0;
+    }
+
+    .col .two #curtain img {
+        display: block;
+        position: absolute;
+        left: 40%;
+        top: 30%;
+        /* width: 100%; */
+        align: center;
+    }
+
+    .col .two #curtain {
+        background: rgba(0,0,0,.26);
+        color: #fff;
+        font-size: 25px;
+    }
+
+    .col .two #chartdiv, #curtain {
+        width: 40%;
+        height: 40%;
+        top: 25%;
+        position: absolute;
+        margin-top: 100%;
+    }
+
+    .col .two #spectrum {
+        width: auto;
+        height: 500px;
+    }
+}

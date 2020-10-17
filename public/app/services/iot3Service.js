@@ -1,0 +1,1 @@
+angular.module('iot3Service', []);
